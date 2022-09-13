@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "boundweapons",
+  "version": "${version}",
+  "name": "Boundweapons",
+  "description": "Adds simple, customizable, Bound Weapons",
+  "authors": [
+    "SkylorBeck"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/boundweapons/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "website.skylorbeck.minecraft.boundweapons.client.BoundweaponsClient"
+    ],
+    "main": [
+      "website.skylorbeck.minecraft.boundweapons.Boundweapons"
+    ]
+  },
+  "mixins": [
+    "boundweapons.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
