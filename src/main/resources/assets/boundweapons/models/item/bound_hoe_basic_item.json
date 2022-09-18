@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "boundweapons:item/bound_hoe_basic"
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "boundweapons:item/bound_bow_basic_pulling_1"
+    }
+}

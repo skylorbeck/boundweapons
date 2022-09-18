@@ -5,16 +5,19 @@ import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ToolMaterials;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import static net.minecraft.util.Rarity.RARE;
 import static website.skylorbeck.minecraft.boundweapons.SummonSpell.DamageCheck;
 
-public class BoundSword extends SwordItem {
-    public BoundSword(int tier) {
-        super(ToolMaterials.IRON, 3, -2.4f, new FabricItemSettings().maxCount(1).maxDamage(32).fireproof().rarity(RARE));
+public class BoundPickaxe extends PickaxeItem {
+    public BoundPickaxe(int tier) {
+        super(ToolMaterials.IRON, 1, -2.8f, new FabricItemSettings().maxCount(1).maxDamage(32).fireproof().rarity(RARE));
         this.tier = tier;
     }
 
@@ -25,7 +28,7 @@ public class BoundSword extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        stack.damage(4, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         DamageCheck(stack, attacker,tier);
         return true;
     }
@@ -50,5 +53,4 @@ public class BoundSword extends SwordItem {
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return false;
     }
-
 }

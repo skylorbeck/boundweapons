@@ -6,15 +6,16 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.*;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import static net.minecraft.util.Rarity.RARE;
 import static website.skylorbeck.minecraft.boundweapons.SummonSpell.DamageCheck;
 
-public class BoundSword extends SwordItem {
-    public BoundSword(int tier) {
-        super(ToolMaterials.IRON, 3, -2.4f, new FabricItemSettings().maxCount(1).maxDamage(32).fireproof().rarity(RARE));
+public class BoundHoe extends HoeItem {
+    public BoundHoe(int tier) {
+        super(ToolMaterials.IRON, 2, -1, new FabricItemSettings().maxCount(1).maxDamage(32).fireproof().rarity(RARE));
         this.tier = tier;
     }
 
@@ -24,8 +25,15 @@ public class BoundSword extends SwordItem {
     }
 
     @Override
+    public ActionResult useOnBlock(ItemUsageContext context) {
+        ActionResult actionResult = super.useOnBlock(context);
+        DamageCheck(context.getStack(), context.getPlayer(),tier);
+        return actionResult;
+    }
+
+    @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.damage(1, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        stack.damage(4, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         DamageCheck(stack, attacker,tier);
         return true;
     }
@@ -36,7 +44,6 @@ public class BoundSword extends SwordItem {
         DamageCheck(stack, miner,tier);
         return postMine;
     }
-
 
 
     @Override
@@ -50,5 +57,4 @@ public class BoundSword extends SwordItem {
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return false;
     }
-
 }
