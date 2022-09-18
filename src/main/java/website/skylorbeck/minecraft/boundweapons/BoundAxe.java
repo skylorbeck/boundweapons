@@ -45,7 +45,7 @@ public class BoundAxe extends AxeItem {
     @Override
     public ItemStack getDefaultStack() {
         ItemStack stack = super.getDefaultStack();
-        stack.addEnchantment(Enchantments.LOOTING, tier + 1);
+        stack.addEnchantment(Enchantments.EFFICIENCY, tier + 1);
         return stack;
     }
 

@@ -52,7 +52,10 @@ public class BoundShovel extends ShovelItem {
     @Override
     public ItemStack getDefaultStack() {
         ItemStack stack = super.getDefaultStack();
-        stack.addEnchantment(Enchantments.LOOTING, tier + 1);
+        stack.addEnchantment(Enchantments.EFFICIENCY, tier + 1);
+        if (tier == 3) {
+            stack.addEnchantment(Enchantments.SILK_TOUCH,1);
+        }
         return stack;
     }
 

@@ -45,7 +45,9 @@ public class BoundPickaxe extends PickaxeItem {
     @Override
     public ItemStack getDefaultStack() {
         ItemStack stack = super.getDefaultStack();
-        stack.addEnchantment(Enchantments.LOOTING, tier + 1);
+        stack.addEnchantment(Enchantments.FORTUNE, tier + 1);
+//        stack.addEnchantment(Enchantments.EFFICIENCY, tier + 1);
+
         return stack;
     }
 

@@ -103,7 +103,14 @@ public class BoundBow extends BowItem {
     @Override
     public ItemStack getDefaultStack() {
         ItemStack stack = super.getDefaultStack();
-        stack.addEnchantment(Enchantments.INFINITY, tier + 1);
+        stack.addEnchantment(Enchantments.INFINITY, 1);
+        if (tier == 2){
+            stack.addEnchantment(Enchantments.POWER, 1);
+        }
+        if (tier == 3){
+            stack.addEnchantment(Enchantments.FLAME, 1);
+        }
+
         return stack;
     }
 
