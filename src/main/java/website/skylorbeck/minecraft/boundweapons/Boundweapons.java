@@ -63,4 +63,6 @@ public class Boundweapons implements ModInitializer {
     public static Item boundHoeBasic = new BoundHoe(0);
     public static Item boundHoeAdvanced = new BoundHoe(1);
     public static Item boundHoeEpic = new BoundHoe(2);
+
+    //todo fishing rod
 }
