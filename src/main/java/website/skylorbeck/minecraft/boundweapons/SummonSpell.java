@@ -1,6 +1,7 @@
 package website.skylorbeck.minecraft.boundweapons;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
@@ -13,6 +14,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 import static net.minecraft.util.Rarity.RARE;
 
@@ -137,7 +141,14 @@ public class SummonSpell extends Item {
         return UseAction.BOW;
     }
 
-    public static void DamageCheck(ItemStack stack, LivingEntity miner,int tier) {
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.of("Hold Right click to summon a Bound Tool"));
+        tooltip.add(Text.of("Sneak Right click to change Selected Tool"));
+        super.appendTooltip(stack, world, tooltip, context);
+    }
+
+    public static void DamageCheck(ItemStack stack, LivingEntity miner, int tier) {
         if (stack.getDamage() >= stack.getMaxDamage()) {
             stack.decrement(1);
             ItemStack itemStack = switch (tier) {
