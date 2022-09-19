@@ -30,11 +30,8 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "website.skylorbeck.minecraft:SkylorLib:${project.skylib_version}"
-
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    modRuntimeOnly "com.terraformersmc:modmenu:${project.mod_menu_version}"
-
 }
 
 processResources {
