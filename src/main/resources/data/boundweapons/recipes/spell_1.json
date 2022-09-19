@@ -2,22 +2,22 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:iron_sword"
+      "item": "minecraft:wooden_sword"
     },
     {
-      "item": "minecraft:iron_pickaxe"
+      "item": "minecraft:wooden_pickaxe"
     },
     {
-      "item": "minecraft:iron_axe"
+      "item": "minecraft:wooden_axe"
     },
     {
-      "item": "minecraft:iron_shovel"
+      "item": "minecraft:wooden_shovel"
     },
     {
       "item": "minecraft:bow"
     },
     {
-      "item": "minecraft:iron_hoe"
+      "item": "minecraft:wooden_hoe"
     },
     {
       "item": "minecraft:quartz"
