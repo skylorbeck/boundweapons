@@ -44,7 +44,10 @@ public class BoundHoe extends HoeItem {
         DamageCheck(stack, miner,tier);
         return postMine;
     }
-
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
 
     @Override
     public ItemStack getDefaultStack() {
@@ -53,6 +56,8 @@ public class BoundHoe extends HoeItem {
         if (tier == 3) {
             stack.addEnchantment(Enchantments.SILK_TOUCH,1);
         }
+        stack.setRepairCost(999);
+
         return stack;
     }
 

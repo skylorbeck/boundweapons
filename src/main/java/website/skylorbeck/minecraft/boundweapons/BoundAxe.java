@@ -40,6 +40,11 @@ public class BoundAxe extends AxeItem {
         return postMine;
     }
 
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
+
 
 
     @Override

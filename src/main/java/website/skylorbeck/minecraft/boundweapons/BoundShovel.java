@@ -48,7 +48,10 @@ public class BoundShovel extends ShovelItem {
     }
 
 
-
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
     @Override
     public ItemStack getDefaultStack() {
         ItemStack stack = super.getDefaultStack();
@@ -56,6 +59,8 @@ public class BoundShovel extends ShovelItem {
         if (tier == 3) {
             stack.addEnchantment(Enchantments.SILK_TOUCH,1);
         }
+        stack.setRepairCost(999);
+
         return stack;
     }
 

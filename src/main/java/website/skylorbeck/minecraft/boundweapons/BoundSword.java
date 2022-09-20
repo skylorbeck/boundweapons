@@ -37,12 +37,16 @@ public class BoundSword extends SwordItem {
         return postMine;
     }
 
-
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
 
     @Override
     public ItemStack getDefaultStack() {
         ItemStack stack = super.getDefaultStack();
         stack.addEnchantment(Enchantments.LOOTING, tier + 1);
+        stack.setRepairCost(999);
         return stack;
     }
 

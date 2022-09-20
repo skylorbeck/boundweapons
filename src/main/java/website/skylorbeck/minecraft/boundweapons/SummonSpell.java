@@ -103,7 +103,12 @@ public class SummonSpell extends Item {
                     };
                     default -> ItemStack.EMPTY;
                 };
-
+                if (itemStack.isEmpty()) {
+                    return;
+                }
+                if (stack.hasCustomName()) {
+                    itemStack.setCustomName(stack.getName());
+                }
                 player.setStackInHand(Hand.MAIN_HAND, itemStack);
                 player.addExperienceLevels(-(1 + tier));
             } else {
@@ -157,6 +162,9 @@ public class SummonSpell extends Item {
                 case 2 -> Boundweapons.summonSpellEpic.getDefaultStack();
                 default -> ItemStack.EMPTY;
             };
+            if (stack.hasCustomName()) {
+                itemStack.setCustomName(stack.getName());
+            }
             ItemEntity itemEntity = new ItemEntity(miner.world, miner.getX(), miner.getY(), miner.getZ(), itemStack);
             miner.world.spawnEntity(itemEntity);
         }
