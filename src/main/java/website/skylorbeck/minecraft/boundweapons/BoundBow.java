@@ -98,7 +98,10 @@ public class BoundBow extends BowItem {
         DamageCheck(stack, miner,tier);
         return postMine;
     }
-
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
 
     @Override
     public ItemStack getDefaultStack() {
@@ -110,6 +113,7 @@ public class BoundBow extends BowItem {
         if (tier == 3){
             stack.addEnchantment(Enchantments.FLAME, 1);
         }
+        stack.setRepairCost(999);
 
         return stack;
     }
