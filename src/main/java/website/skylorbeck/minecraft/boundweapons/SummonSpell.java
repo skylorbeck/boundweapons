@@ -109,7 +109,7 @@ public class SummonSpell extends Item {
                 if (stack.hasCustomName()) {
                     itemStack.setCustomName(stack.getName());
                 }
-                player.setStackInHand(Hand.MAIN_HAND, itemStack);
+                player.setStackInHand(player.getActiveHand(), itemStack);
                 player.addExperienceLevels(-(1 + tier));
             } else {
                 player.sendMessage(Text.of("You need " + (tier + 1) + " experience levels to summon your Bound Tool!"), true);
